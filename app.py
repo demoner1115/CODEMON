@@ -6,6 +6,8 @@ import replicate  # type: ignore
 import openai
 import os
 
+app = Flask(__name__, template_folder='.')
+
 # 🔐 환경 변수 로드
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
