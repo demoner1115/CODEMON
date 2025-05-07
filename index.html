@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codemon | AI 이미지 생성기</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
 
+  <header>
+    <div id="menu-icon" onclick="toggleSidebar()">☰</div>
+    <h1>Codemon</h1>
+  </header>
+  
+  <!-- 사이드바 -->
+  <aside id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">✕</div>
+    <ul>
+      <li onclick="useExample('귀여운 고양이가 초록 목도리를 두르고 있는 모습')">예시 프롬프트 1</li>
+      <li onclick="useExample('밤하늘을 나는 픽셀 드래곤')">예시 프롬프트 2</li>
+      <li onclick="useExample('연한 초록 파스텔톤의 판타지 숲')">예시 프롬프트 3</li>
+    </ul>
+  </aside>
+
+<main>
+  <input type="text" id="prompt" placeholder="무엇을 그려볼까요?" />
+  <button onclick="generateImage()">이미지 생성</button>
+  <div id="generate-result"></div>
+</main>
+
+<h2>🖼️ 이미지 업로드 후 지브리풍 변환</h2>
+
+<form id="upload-form" enctype="multipart/form-data">
+  <label class="custom-file-upload">
+    <input type="file" name="image" id="imageInput" accept="image/*" />
+    이미지 선택
+  </label>
+  <button class="convert-btn" type="submit">지브리풍으로 변환</button>
+</form>
+
+<div class="image-preview-container">
+  <div class="image-box">
+    <h3>원본 이미지</h3>
+    <img id="original-preview" src="" alt="Original Preview" />
+  </div>
+
+  <div class="image-box">
+    <h3>지브리풍 결과</h3>
+    <div id="upload-result"></div>
+  </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
